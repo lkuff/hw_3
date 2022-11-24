@@ -24,8 +24,8 @@ public class TestData {
     public String city = "Panipat";
 
     public String randomGender() {
-        String[] arrayGenders = {"Male", "Female", "Other"};
-        return arrayGenders[random.nextInt(arrayGenders.length)];
+        String[] arrayGender = {"Male", "Female", "Other"};
+        return arrayGender[random.nextInt(arrayGender.length)];
     }
 
     public String randomHobbies() {
@@ -34,8 +34,8 @@ public class TestData {
     }
 
     public String randomMonth() {
-        String[] arrayHobbies = {"January", "February", "March", "April", "May",
+        String[] arrayMonth = {"January", "February", "March", "April", "May",
                 "June", "July", "August", "September", "October", "November", "December"};
-        return arrayHobbies[random.nextInt(arrayHobbies.length)];
+        return arrayMonth[random.nextInt(arrayMonth.length)];
     }
 }
