@@ -3,48 +3,34 @@ package tests;
 import org.junit.jupiter.api.Test;
 
 public class RegFormTest extends TestBase{
+
     @Test
     void fillFormTest() {
-        String  firstName = "Alexey",
-                lastName = "Nikiforov",
-                email = "some@mail.com",
-                gender = "Male",
-                number = "1231231234",
-                birthDay = "04",
-                birthMonth = "September",
-                birthYear = "1993",
-                subject = "Computer Science",
-                hobbies = "Music",
-                upPicture = "img/hw_4.jpg",
-                address = "Russia, Moscow",
-                state = "Haryana",
-                city = "Panipat";
-
 
         registrationPage.openPage()
-                .setFirstName(firstName)
-                .setLastName(lastName)
-                .setEmail(email)
-                .setGender(gender)
-                .setNumber(number)
-                .setBirthDate(birthDay, birthMonth, birthYear)
-                .setSubject(subject)
-                .setHobbies(hobbies)
-                .setPicture(upPicture)
-                .setAddress(address)
-                .setState(state)
-                .setCity(city)
+                .setFirstName(testdata.firstName)
+                .setLastName(testdata.lastName)
+                .setEmail(testdata.email)
+                .setGender(testdata.gender)
+                .setNumber(testdata.number)
+                .setBirthDate(testdata.birthDay, testdata.birthMonth, testdata.birthYear)
+                .setSubject(testdata.subject)
+                .setHobbies(testdata.hobbies)
+                .setPicture(testdata.upPicture)
+                .setAddress(testdata.address)
+                .setState(testdata.state)
+                .setCity(testdata.city)
                 .clickSubmit();
 
         registrationPage.verifyModalResAppears()
-                    .verifyResContent("Student Name", firstName + " " + lastName)
-                    .verifyResContent("Student Email", email)
-                    .verifyResContent("Gender", gender)
-                    .verifyResContent("Mobile", number)
-                    .verifyResContent("Date of Birth", birthDay + " " + birthMonth + "," + birthYear)
-                    .verifyResContent("Subjects", subject)
-                    .verifyResContent("Picture", upPicture.substring(4))
-                    .verifyResContent("Address", address)
-                    .verifyResContent("State and City", state + " " + city);
+                    .verifyResContent("Student Name", testdata.firstName + " " + testdata.lastName)
+                    .verifyResContent("Student Email", testdata.email)
+                    .verifyResContent("Gender", testdata.gender)
+                    .verifyResContent("Mobile", testdata.number)
+                    .verifyResContent("Date of Birth", testdata.birthDay + " " + testdata.birthMonth + "," + testdata.birthYear)
+                    .verifyResContent("Subjects", testdata.subject)
+                    .verifyResContent("Picture", testdata.upPicture.substring(4))
+                    .verifyResContent("Address", testdata.address)
+                    .verifyResContent("State and City", testdata.state + " " + testdata.city);
     }
 }
